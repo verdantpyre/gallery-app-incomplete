@@ -11,7 +11,6 @@ from kivy.lang import Builder
 from datetime import date
 from datetime import datetime as day
 import os
-import pickle
 
 from kivy.uix.widget import Widget
 
@@ -56,11 +55,6 @@ class Gallery(App):
         self.main_layout.add_widget(self.image_layout)
         root.add_widget(self.main_layout)
         return root
-
-    def loadall(self):
-        with open('.StudyStreak.dat', 'rb') as f:
-            self.pref = pickle.load(f)
-            self.data = pickle.load(f)
 
 
 class Group:
